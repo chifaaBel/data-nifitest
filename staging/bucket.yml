@@ -1,0 +1,6 @@
+flows:
+  f2a96b7b-eeaa-4e6d-aebe-d598313d873f: {ver: 1, file: first_fow.snapshot, comments: this
+      is the first version, author: anonymous, created: 1714475926301, flowName: first
+      fow, flowDesc: this is the test flow}
+layoutVer: 1
+bucketId: f7c0ade6-57a2-418d-ad2b-88b940ae9e57

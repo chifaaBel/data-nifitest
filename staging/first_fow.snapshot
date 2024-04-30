@@ -1,0 +1,377 @@
+{
+  "header" : {
+    "dataModelVersion" : "3"
+  },
+  "content" : {
+    "flowSnapshot" : {
+      "externalControllerServices" : { },
+      "flowContents" : {
+        "comments" : "",
+        "componentType" : "PROCESS_GROUP",
+        "connections" : [ {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "5e41fa9c-a34d-3f47-8513-cf6ece196f55",
+            "id" : "5fccc8e7-037f-30ca-8c03-f139ef9bccfd",
+            "instanceIdentifier" : "2eb68c0f-018f-1000-aac2-c0ad32f2aaff",
+            "name" : "LogMessage",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "5e41fa9c-a34d-3f47-8513-cf6ece196f55",
+          "identifier" : "7918a91e-f0eb-3f7d-bedf-92cc5596083c",
+          "instanceIdentifier" : "2eb69d8e-018f-1000-6de8-61431dee2715",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "5e41fa9c-a34d-3f47-8513-cf6ece196f55",
+            "id" : "7b3b808a-d362-3a50-ae8c-26f02c405644",
+            "instanceIdentifier" : "2eb65284-018f-1000-30e6-1e7ac40b8182",
+            "name" : "ListS3",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        } ],
+        "controllerServices" : [ ],
+        "defaultBackPressureDataSizeThreshold" : "1 GB",
+        "defaultBackPressureObjectThreshold" : 10000,
+        "defaultFlowFileExpiration" : "0 sec",
+        "flowFileConcurrency" : "UNBOUNDED",
+        "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+        "funnels" : [ ],
+        "identifier" : "5e41fa9c-a34d-3f47-8513-cf6ece196f55",
+        "inputPorts" : [ ],
+        "instanceIdentifier" : "2eb56a21-018f-1000-22ce-e21d8508205c",
+        "labels" : [ ],
+        "name" : "Flow1",
+        "outputPorts" : [ ],
+        "position" : {
+          "x" : 691.0,
+          "y" : 298.0
+        },
+        "processGroups" : [ ],
+        "processors" : [ {
+          "autoTerminatedRelationships" : [ "success" ],
+          "backoffMechanism" : "PENALIZE_FLOWFILE",
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.25.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "5e41fa9c-a34d-3f47-8513-cf6ece196f55",
+          "identifier" : "5fccc8e7-037f-30ca-8c03-f139ef9bccfd",
+          "instanceIdentifier" : "2eb68c0f-018f-1000-aac2-c0ad32f2aaff",
+          "maxBackoffPeriod" : "10 mins",
+          "name" : "LogMessage",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 513.0,
+            "y" : 441.0
+          },
+          "properties" : {
+            "log-level" : "info"
+          },
+          "propertyDescriptors" : {
+            "log-message" : {
+              "displayName" : "Log message",
+              "identifiesControllerService" : false,
+              "name" : "log-message",
+              "sensitive" : false
+            },
+            "log-level" : {
+              "displayName" : "Log Level",
+              "identifiesControllerService" : false,
+              "name" : "log-level",
+              "sensitive" : false
+            },
+            "log-prefix" : {
+              "displayName" : "Log prefix",
+              "identifiesControllerService" : false,
+              "name" : "log-prefix",
+              "sensitive" : false
+            }
+          },
+          "retriedRelationships" : [ ],
+          "retryCount" : 10,
+          "runDurationMillis" : 25,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.LogMessage",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "backoffMechanism" : "PENALIZE_FLOWFILE",
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-aws-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.25.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "PRIMARY",
+          "groupIdentifier" : "5e41fa9c-a34d-3f47-8513-cf6ece196f55",
+          "identifier" : "7b3b808a-d362-3a50-ae8c-26f02c405644",
+          "instanceIdentifier" : "2eb65284-018f-1000-30e6-1e7ac40b8182",
+          "maxBackoffPeriod" : "10 mins",
+          "name" : "ListS3",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 368.0,
+            "y" : 96.0
+          },
+          "properties" : {
+            "list-type" : "1",
+            "et-initial-listing-target" : "all",
+            "et-time-window" : "3 hours",
+            "requester-pays" : "false",
+            "listing-strategy" : "timestamps",
+            "Signer Override" : "Default Signature",
+            "min-age" : "0 sec",
+            "write-s3-user-metadata" : "false",
+            "Listing Batch Size" : "100",
+            "write-s3-object-tags" : "false",
+            "Bucket" : "datalake-effyis",
+            "Communications Timeout" : "30 secs",
+            "Region" : "us-east-1",
+            "use-versions" : "false"
+          },
+          "propertyDescriptors" : {
+            "Proxy Host" : {
+              "displayName" : "Proxy Host",
+              "identifiesControllerService" : false,
+              "name" : "Proxy Host",
+              "sensitive" : false
+            },
+            "list-type" : {
+              "displayName" : "List Type",
+              "identifiesControllerService" : false,
+              "name" : "list-type",
+              "sensitive" : false
+            },
+            "et-initial-listing-target" : {
+              "displayName" : "Entity Tracking Initial Listing Target",
+              "identifiesControllerService" : false,
+              "name" : "et-initial-listing-target",
+              "sensitive" : false
+            },
+            "Access Key" : {
+              "displayName" : "Access Key ID",
+              "identifiesControllerService" : false,
+              "name" : "Access Key",
+              "sensitive" : true
+            },
+            "prefix" : {
+              "displayName" : "Prefix",
+              "identifiesControllerService" : false,
+              "name" : "prefix",
+              "sensitive" : false
+            },
+            "record-writer" : {
+              "displayName" : "Record Writer",
+              "identifiesControllerService" : true,
+              "name" : "record-writer",
+              "sensitive" : false
+            },
+            "proxy-configuration-service" : {
+              "displayName" : "Proxy Configuration Service",
+              "identifiesControllerService" : true,
+              "name" : "proxy-configuration-service",
+              "sensitive" : false
+            },
+            "Endpoint Override URL" : {
+              "displayName" : "Endpoint Override URL",
+              "identifiesControllerService" : false,
+              "name" : "Endpoint Override URL",
+              "sensitive" : false
+            },
+            "et-time-window" : {
+              "displayName" : "Entity Tracking Time Window",
+              "identifiesControllerService" : false,
+              "name" : "et-time-window",
+              "sensitive" : false
+            },
+            "custom-signer-class-name" : {
+              "displayName" : "Custom Signer Class Name",
+              "identifiesControllerService" : false,
+              "name" : "custom-signer-class-name",
+              "sensitive" : false
+            },
+            "requester-pays" : {
+              "displayName" : "Requester Pays",
+              "identifiesControllerService" : false,
+              "name" : "requester-pays",
+              "sensitive" : false
+            },
+            "custom-signer-module-location" : {
+              "displayName" : "Custom Signer Module Location",
+              "identifiesControllerService" : false,
+              "name" : "custom-signer-module-location",
+              "resourceDefinition" : {
+                "cardinality" : "MULTIPLE",
+                "resourceTypes" : [ "FILE", "DIRECTORY" ]
+              },
+              "sensitive" : false
+            },
+            "listing-strategy" : {
+              "displayName" : "Listing Strategy",
+              "identifiesControllerService" : false,
+              "name" : "listing-strategy",
+              "sensitive" : false
+            },
+            "Signer Override" : {
+              "displayName" : "Signer Override",
+              "identifiesControllerService" : false,
+              "name" : "Signer Override",
+              "sensitive" : false
+            },
+            "delimiter" : {
+              "displayName" : "Delimiter",
+              "identifiesControllerService" : false,
+              "name" : "delimiter",
+              "sensitive" : false
+            },
+            "proxy-user-password" : {
+              "displayName" : "Proxy Password",
+              "identifiesControllerService" : false,
+              "name" : "proxy-user-password",
+              "sensitive" : true
+            },
+            "Secret Key" : {
+              "displayName" : "Secret Access Key",
+              "identifiesControllerService" : false,
+              "name" : "Secret Key",
+              "sensitive" : true
+            },
+            "min-age" : {
+              "displayName" : "Minimum Object Age",
+              "identifiesControllerService" : false,
+              "name" : "min-age",
+              "sensitive" : false
+            },
+            "write-s3-user-metadata" : {
+              "displayName" : "Write User Metadata",
+              "identifiesControllerService" : false,
+              "name" : "write-s3-user-metadata",
+              "sensitive" : false
+            },
+            "max-age" : {
+              "displayName" : "Maximum Object Age",
+              "identifiesControllerService" : false,
+              "name" : "max-age",
+              "sensitive" : false
+            },
+            "AWS Credentials Provider service" : {
+              "displayName" : "AWS Credentials Provider Service",
+              "identifiesControllerService" : true,
+              "name" : "AWS Credentials Provider service",
+              "sensitive" : false
+            },
+            "Listing Batch Size" : {
+              "displayName" : "Listing Batch Size",
+              "identifiesControllerService" : false,
+              "name" : "Listing Batch Size",
+              "sensitive" : false
+            },
+            "SSL Context Service" : {
+              "displayName" : "SSL Context Service",
+              "identifiesControllerService" : true,
+              "name" : "SSL Context Service",
+              "sensitive" : false
+            },
+            "write-s3-object-tags" : {
+              "displayName" : "Write Object Tags",
+              "identifiesControllerService" : false,
+              "name" : "write-s3-object-tags",
+              "sensitive" : false
+            },
+            "Bucket" : {
+              "displayName" : "Bucket",
+              "identifiesControllerService" : false,
+              "name" : "Bucket",
+              "sensitive" : false
+            },
+            "Communications Timeout" : {
+              "displayName" : "Communications Timeout",
+              "identifiesControllerService" : false,
+              "name" : "Communications Timeout",
+              "sensitive" : false
+            },
+            "Region" : {
+              "displayName" : "Region",
+              "identifiesControllerService" : false,
+              "name" : "Region",
+              "sensitive" : false
+            },
+            "Credentials File" : {
+              "displayName" : "Credentials File",
+              "identifiesControllerService" : false,
+              "name" : "Credentials File",
+              "resourceDefinition" : {
+                "cardinality" : "SINGLE",
+                "resourceTypes" : [ "FILE" ]
+              },
+              "sensitive" : false
+            },
+            "et-state-cache" : {
+              "displayName" : "Entity Tracking State Cache",
+              "identifiesControllerService" : true,
+              "name" : "et-state-cache",
+              "sensitive" : false
+            },
+            "proxy-user-name" : {
+              "displayName" : "Proxy Username",
+              "identifiesControllerService" : false,
+              "name" : "proxy-user-name",
+              "sensitive" : false
+            },
+            "Proxy Host Port" : {
+              "displayName" : "Proxy Host Port",
+              "identifiesControllerService" : false,
+              "name" : "Proxy Host Port",
+              "sensitive" : false
+            },
+            "use-versions" : {
+              "displayName" : "Use Versions",
+              "identifiesControllerService" : false,
+              "name" : "use-versions",
+              "sensitive" : false
+            }
+          },
+          "retriedRelationships" : [ ],
+          "retryCount" : 10,
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "1 min",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.aws.s3.ListS3",
+          "yieldDuration" : "1 sec"
+        } ],
+        "remoteProcessGroups" : [ ],
+        "variables" : { }
+      },
+      "flowEncodingVersion" : "1.0",
+      "parameterContexts" : { },
+      "parameterProviders" : { }
+    }
+  }
+}
